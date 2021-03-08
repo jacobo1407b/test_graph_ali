@@ -1,0 +1,29 @@
+type People{
+    id: ID!,
+    nombre: String!,
+    nombreDos: String,
+    apellido: String!,
+    apellidoMa: String!,
+    fecha: String!,
+    email: String!,
+    telefono: String!,
+}
+
+type Query{
+    getPeople: [People]
+    getPerson(id:ID!): People
+}
+
+input PeopleInput{
+    nombre: String!,
+    nombreDos: String,
+    apellido: String!,
+    apellidoMa: String!,
+    fecha: String!,
+    email: String!,
+    telefono: String!,
+}
+type Mutation {
+    createPeople(input: PeopleInput!): People
+}
+
